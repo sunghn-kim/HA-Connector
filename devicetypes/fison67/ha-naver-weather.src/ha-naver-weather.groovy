@@ -1,7 +1,7 @@
 /**
  *  HA Naver Weather (v0.1.0)
  *
- *  Authors
+ *  Author
  *   - sunghn.kim@gmail.com
  *  Copyright 2018-2021
  *
