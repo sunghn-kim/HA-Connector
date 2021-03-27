@@ -2,7 +2,6 @@
  *  HA Naver Weather (v0.1.0)
  *
  *  Authors
- *   - fison67@nate.com
  *   - sunghn.kim@gmail.com
  *  Copyright 2018-2021
  *
@@ -20,7 +19,7 @@
 import groovy.json.JsonSlurper
 
 metadata {
-    definition (name: "HA Naver Weather", namespace: "fison67", author: "fison67/sunghn-kim", ocfDeviceType: "x.com.st.d.airqualitysensor") {
+    definition (name: "HA Naver Weather", namespace: "fison67", author: "sunghn-kim", ocfDeviceType: "x.com.st.d.airqualitysensor") {
         capability "Dust Sensor"
         capability "Temperature Measurement"
         capability "Relative Humidity Measurement"
@@ -41,7 +40,7 @@ def setHASetting(url, password, deviceId) {
 }
 
 def setStatusMap(object) {
-    log.debug "[setStatusMap()] Received object:\n" + object
+    log.debug "[HA Naver Weather][setStatusMap()] Received object:\n" + object
 
     def attributes = object.attr != null ? object.attr : object.attributes
 
@@ -73,7 +72,7 @@ def callback(physicalgraph.device.HubResponse hubResponse) {
     try {
         setStatusMap(new JsonSlurper().parseText(parseLanMessage(hubResponse.description).body))
     } catch (e) {
-        log.error "Exception caught while parsing data: " + e;
+        log.error "[HA Naver Weather][callback()] Exception caught while parsing data: " + e;
     }
 }
 
