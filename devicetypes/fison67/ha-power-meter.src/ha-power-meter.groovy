@@ -19,7 +19,7 @@
 import groovy.json.JsonSlurper
 
 metadata {
-	definition (name: "HA Power Meter", namespace: "fison67", author: "fison67") {
+	definition (name: "HA Power Meter", namespace: "fison67", author: "fison67", ocfDeviceType: "x.com.st.d.energymeter") {
         capability "Power Meter"
       	capability "Sensor"
         capability "Refresh"		
@@ -39,7 +39,7 @@ metadata {
 	tiles {
 		multiAttributeTile(name:"power", type:"generic", width:6, height:4) {
         	tileAttribute ("device.power", key: "PRIMARY_CONTROL") {
-				attributeState("power", label:'${currentValue}w')
+				attributeState("power", label:'${currentValue}W')
 			}
             tileAttribute("device.lastCheckin", key: "SECONDARY_CONTROL") {
     			attributeState("default", label:'Updated: ${currentValue}\n')
