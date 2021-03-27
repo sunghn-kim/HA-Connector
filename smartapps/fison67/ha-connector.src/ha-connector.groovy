@@ -431,7 +431,7 @@ def mainPage() {
 def haTypePage() {
     dynamicPage(name: "haTypePage", title: "Select a type", nextPage: "mainPage") {
        section("Configure HA API"){
-           input "haAddType", "enum", title: "type", required: true, options: ["Default Sensor", "Switch", "Color Light", "White Light", "Motion Sensor", "Power Meter", "Illuminance Sensor", "Door Sensor", "Presence Sensor", "Temperature Sensor", "Humidity Sensor", "Battery", "Vacuum", "Blind", "Air Conditioner", "Button", "Fan", "Energy Meter", "Heater", "Naver Weather"], defaultValue: "Default"
+           input "haAddType", "enum", title: "type", required: true, options: ["Default Sensor", "Switch", "Color Light", "White Light", "Motion Sensor", "Power Meter", "Illuminance Sensor", "Door Sensor", "Presence Sensor", "Temperature Sensor", "Humidity Sensor", "Battery", "Vacuum", "Blind", "Air Conditioner", "Button", "Fan", "Heater", "Energy Meter", "Naver Weather"], defaultValue: "Default"
        }
     }
 }
