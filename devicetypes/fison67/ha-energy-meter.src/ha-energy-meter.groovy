@@ -22,7 +22,6 @@ metadata {
     definition (name: "HA Energy Meter", namespace: "fison67", author: "sunghn-kim", ocfDeviceType: "x.com.st.d.energymeter") {
         capability "Energy Meter"
         capability "Power Meter"
-        capability "Refresh"
 
         attribute "lastCheckin", "Date"
     }

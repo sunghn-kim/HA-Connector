@@ -24,7 +24,6 @@ metadata {
         capability "Temperature Measurement"
         capability "Relative Humidity Measurement"
         capability "Ultraviolet Index"
-        capability "Refresh"
 
         attribute "lastCheckin", "Date"
     }
@@ -47,11 +46,11 @@ def setStatusMap(object) {
     sendEvent(name: "entity_id", value: state.entity_id, displayed: false)
     sendEvent(name: "lastCheckin", value: new Date().format("yyyy-MM-dd HH:mm:ss", location.timeZone), displayed: false)
 
-    sendEvent(name: "temperature", value: attributes.현재온도.replace("°C", ""), unit:"°C")
-    sendEvent(name: "humidity", value: attributes.현재습도.replace("%", ""), unit: "%")
-    sendEvent(name: "dustLevel", value: attributes.미세먼지.replace("㎍/m³", ""), unit:"㎍/m³")
-    sendEvent(name: "fineDustLevel", value: attributes.초미세먼지.replace("㎍/m³", ""), unit:"㎍/m³")
-    sendEvent(name: "ultravioletIndex", value: attributes.자외선지수)
+    sendEvent(name: "temperature", value: attributes.'네이버 날씨 - 현재 온도'.replace("°C", ""), unit:"°C")
+    sendEvent(name: "humidity", value: attributes.'네이버 날씨 - 현재 습도'.replace("%", ""), unit: "%")
+    sendEvent(name: "dustLevel", value: attributes.'네이버 날씨 - 미세먼지'.replace("㎍/m³", ""), unit:"㎍/m³")
+    sendEvent(name: "fineDustLevel", value: attributes.'네이버 날씨 - 초미세먼지'.replace("㎍/m³", ""), unit:"㎍/m³")
+    sendEvent(name: "ultravioletIndex", value: attributes.'네이버 날씨 - 자외선지수')
 }
 
 def refresh() {
