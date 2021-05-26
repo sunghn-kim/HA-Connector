@@ -46,10 +46,10 @@ def setStatusMap(object) {
     sendEvent(name: "entity_id", value: state.entity_id, displayed: false)
     sendEvent(name: "lastCheckin", value: new Date().format("yyyy-MM-dd HH:mm:ss", location.timeZone), displayed: false)
 
-    sendEvent(name: "temperature", value: attributes.'네이버 날씨 - 현재 온도'.replace("°C", ""), unit:"°C")
+    sendEvent(name: "temperature", value: attributes.'네이버 날씨 - 현재 온도'.replace("°C", ""), unit:"C")
     sendEvent(name: "humidity", value: attributes.'네이버 날씨 - 현재 습도'.replace("%", ""), unit: "%")
-    sendEvent(name: "dustLevel", value: attributes.'네이버 날씨 - 미세먼지'.replace("㎍/m³", ""), unit:"㎍/m³")
-    sendEvent(name: "fineDustLevel", value: attributes.'네이버 날씨 - 초미세먼지'.replace("㎍/m³", ""), unit:"㎍/m³")
+    sendEvent(name: "dustLevel", value: attributes.'네이버 날씨 - 미세먼지'.replace("μg/m³", ""), unit:"μg/m^3")
+    sendEvent(name: "fineDustLevel", value: attributes.'네이버 날씨 - 초미세먼지'.replace("μg/m³", ""), unit:"μg/m^3")
     sendEvent(name: "ultravioletIndex", value: attributes.'네이버 날씨 - 자외선지수')
 }
 
